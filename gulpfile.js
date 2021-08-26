@@ -3,6 +3,7 @@ const gulp        = require('gulp'),
     pug = require('gulp-pug'),
     sass = require('gulp-sass')(require('sass')),
     uglify = require('gulp-uglify'),
+    autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     webpack = require('webpack-stream'),
     babel = require('gulp-babel'),
@@ -67,7 +68,15 @@ const pugTask = () => {
 
 const scssTask = () => {
     return gulp.src(config.app.style)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(concat('main.min.css'))
+        .pipe( 
+            autoprefixer({ 
+                overrideBrowserslist: ["last 5 versions"], 
+                grid: true, 
+                flexbox: false, 
+            }) 
+        ) 
         .pipe(gulp.dest(config.dist.style))
         .pipe(browserSync.reload({ stream: true }))
 }

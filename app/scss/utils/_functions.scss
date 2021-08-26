@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../config/default-variables";
 
 @function em($prop) {
@@ -5,7 +7,7 @@
   }
   
   @function rem($pixels, $root: $fz-root) {
-    @return $pixels / $root + rem;
+    @return math.div($pixels, $root) + rem;
   }
   
   @function i($name) {

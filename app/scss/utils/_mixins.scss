@@ -110,7 +110,7 @@
 @mixin triangle( $color, $size ) {
   @include ib;
 
-  border: $size / 2 + px solid transparent;
+  border: $size * 0.5 + px solid transparent;
   border-top-color: $color;
   border-bottom: 0;
 
@@ -121,7 +121,7 @@
 @mixin triangle-rev( $color, $size ) {
   @include ib;
 
-  border: $size / 2 + px solid transparent;
+  border: $size * 0.5 + px solid transparent;
   border-bottom-color: $color;
   border-top: 0;
 
@@ -132,7 +132,7 @@
 @mixin triangle-right( $color, $size ) {
   @include ib;
 
-  border: $size / 2 + px solid transparent;
+  border: $size * 0.5 + px solid transparent;
   border-left-color: $color;
   border-right: 0;
 
