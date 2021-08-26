@@ -1,0 +1,18 @@
+@import "../../config/default-variables";
+@import "../../utils/mixins";
+
+.header {
+    height: rem(100);
+    @include dflex(center, wrap, center);
+    background-color: $c-white-300;
+
+    &__logo {
+        text-decoration: none;
+        color: $c-black;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: red;
+        }
+    }
+}

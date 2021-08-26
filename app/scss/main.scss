@@ -1,0 +1,18 @@
+@import "./utils/mixins";
+@import "./config/default-variables";
+@import "./utils/functions";
+@import "./config/global";
+@import "./config/vendor";
+@import "./components/index";
+
+
+// PLUGIN
+@import "./components/swiper.scss";
+
+
+// BLOCKS
+@import "./components/blocks/header";
+
+
+// MAIN PAGE
+@import "./components/main-page/first"
